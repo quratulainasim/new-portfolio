@@ -32,9 +32,9 @@ const timeline = [
   },
   {
     icon: Brain,
-    year: "2024–Present",
-    title: "AI & Agentic Systems",
-    description: "Specializing in Prompt Engineering, OpenAI Agents SDK, Agentic AI, and FTE AI Automation.",
+    year: "2024-PRESENT",
+    title: "Cloud Generative AI",
+    description: "Governor Initiative AI Technologies and Web Development, Ongoing innovative projects, Artificial Programme.",
     highlight: "AI Expert",
   },
 ];

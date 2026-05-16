@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { Sparkles, Zap } from "lucide-react";
 
 const coreSkills = [
+  { name: "Cloud Generative AI", level: 95, category: "AI & ML" },
   { name: "Python", level: 90, category: "AI & ML" },
   { name: "OpenAI Agents SDK", level: 85, category: "AI & ML" },
   { name: "Prompt Engineering", level: 90, category: "AI & ML" },
-  { name: "Agentic AI", level: 98, category: "AI & ML" },
-  { name: "Generative AI & LLMs", level: 88, category: "AI & ML" },
+  { name: "OpenClaw", level: 85, category: "AI & ML" },
   { name: "TypeScript", level: 85, category: "Frontend" },
   { name: "React / Next.js", level: 85, category: "Frontend" },
   { name: "Tailwind CSS", level: 88, category: "Frontend" },

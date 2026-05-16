@@ -33,16 +33,14 @@ const HeroSection = () => {
             className="text-center lg:text-left"
           >
             <p className="font-display text-sm uppercase tracking-[0.3em] text-sky-light mb-4">
-              Chemistry → Business → AI
+              Founder, Nexora Studio | Full-Stack AI Developer
             </p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-primary-foreground">Hi, I'm </span>
               <span className="text-gradient">Quratulain</span>
             </h1>
             <p className="font-body text-lg text-primary-foreground/60 max-w-xl mx-auto lg:mx-0 mb-8">
-              MSc & EMBA turned Agentic AI Architect. I design autonomous digital
-              workforces and intelligent cloud systems that bridge the gap between
-              business strategy and cutting-edge intelligence.
+              Founder of Nexora Studio, specializing in bespoke web development and intelligent automation. Currently advancing my expertise in the Cloud Generative AI program to architect cutting-edge, cloud-powered digital products.
             </p>
 
             <div className="flex items-center gap-4 justify-center lg:justify-start flex-wrap">

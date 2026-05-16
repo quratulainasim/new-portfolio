@@ -1,18 +1,44 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "Journey", href: "#journey" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Journey", href: "/#journey" },
+  { label: "Skills", href: "/#skills" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Product", href: "/product" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    
+    if (href.startsWith("/#")) {
+      const hash = href.replace("/", "");
+      if (location.pathname === "/") {
+        const id = hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          window.history.pushState(null, "", hash);
+        }
+      } else {
+        navigate(href);
+      }
+    } else {
+      navigate(href);
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -30,7 +56,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#home" className="font-display text-2xl font-bold text-primary-foreground">
+        <a href="/#home" onClick={(e) => handleNavClick(e, "/#home")} className="font-display text-2xl font-bold text-primary-foreground">
           <span className="text-gradient">Quratulain</span>
         </a>
 
@@ -40,6 +66,7 @@ const Navbar = () => {
             <li key={item.href}>
               <a
                 href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="font-display text-sm font-medium text-primary-foreground/70 hover:text-primary transition-colors relative group"
               >
                 {item.label}
@@ -50,7 +77,8 @@ const Navbar = () => {
         </ul>
 
         <a
-          href="#contact"
+          href="/#contact"
+          onClick={(e) => handleNavClick(e, "/#contact")}
           className="hidden md:inline-flex px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-display text-sm font-semibold hover:opacity-90 transition-opacity glow"
         >
           Hire Me
@@ -79,7 +107,7 @@ const Navbar = () => {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className="font-display text-lg font-medium text-primary-foreground/80 hover:text-primary"
                   >
                     {item.label}
@@ -87,8 +115,8 @@ const Navbar = () => {
                 </li>
               ))}
               <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
+                href="/#contact"
+                onClick={(e) => handleNavClick(e, "/#contact")}
                 className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-display text-sm font-semibold"
               >
                 Hire Me

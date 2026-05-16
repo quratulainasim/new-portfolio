@@ -7,8 +7,28 @@ import ecommerce1 from "../assets/ecommerce1.png";
 import blogWeb from "../assets/blog-web.png";
 import diabeticChecker from "../assets/dibetic-checker.png";
 import cellPoint from "../assets/cell-point.png";
+import nexImg from "../assets/nex.png";
+import masalaImg from "../assets/masala.png";
 
 const projects = [
+  {
+    title: "Masala Mood",
+    description: "A vibrant web application for a modern food experience.",
+    tags: ["React", "Next.js", "Tailwind CSS", "Web App"],
+    color: "from-sky-dark/20 to-primary/10",
+    image: masalaImg,
+    github: "",
+    link: "https://masala-mood2.vercel.app/",
+  },
+  {
+    title: "NEXORA-STUDIO",
+    description: "Software House & AI Solutions - Next-generation digital products",
+    tags: ["AI & Automation", "Cloud & DevOps", "Full-Stack Dev"],
+    color: "from-primary/20 to-sky-dark/10",
+    image: nexImg,
+    github: "",
+    link: "https://nexorastudio-ten.vercel.app/",
+  },
   {
     title: "AI-Powered Robotics Book",
     description: "Built with Docusaurus AI-Chatbot,OpenAI Agents SDK & Next.js",
